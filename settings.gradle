@@ -1,0 +1,3 @@
+include ':app'
+include ':aars'
+rootProject.name='token_android_aar'
