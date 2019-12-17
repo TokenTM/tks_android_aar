@@ -26,6 +26,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api fileTree(include: ['tks-debug.jar', 'lib_api-debug.jar'], dir: 'libs')
+    api fileTree(include: ['sm_crypto.aar'], dir: 'libs')
     api rootProject.ext.dependencies.xxf_android
     implementation 'org.xxtea:xxtea-java:1.0.5'
     api('org.web3j:core:4.2.0-android') {
@@ -37,4 +38,7 @@ dependencies {
 }
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
