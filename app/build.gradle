@@ -13,6 +13,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -24,12 +28,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
-    //implementation project(path: ':aars')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':aars')
 }
 repositories {
     mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
 }
