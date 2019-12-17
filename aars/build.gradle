@@ -17,12 +17,18 @@ android {
     lintOptions {
         abortOnError false
     }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    packagingOptions {
+        exclude 'res/values/values.xml'
+    }
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    api fileTree(include: ['tks-debug.aar', 'lib_api-debug.aar'], dir: 'libs')
-    implementation fileTree(include: ['lib_core-debug.aar', 'lib_web3j_sm2-debug.aar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(include: ['tks-debug.jar', 'lib_api-debug.jar'], dir: 'libs')
     api rootProject.ext.dependencies.xxf_android
     implementation 'org.xxtea:xxtea-java:1.0.5'
     api('org.web3j:core:4.2.0-android') {
