@@ -9,10 +9,6 @@ android {
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -24,15 +20,14 @@ android {
 }
 
 dependencies {
-    api fileTree(include: ['*.jar', 'tks-debug.aar','lib_api-debug.aar'], dir: 'libs')
-    implementation(name: 'lib_core-debug', ext: 'aar')
-    implementation(name: 'lib_web3j_sm2-debug', ext: 'aar')
-
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api fileTree(include: ['tks-debug.aar', 'lib_api-debug.aar'], dir: 'libs')
+    implementation fileTree(include: ['lib_core-debug.aar', 'lib_web3j_sm2-debug.aar'], dir: 'libs')
     api rootProject.ext.dependencies.xxf_android
     implementation 'org.xxtea:xxtea-java:1.0.5'
     api('org.web3j:core:4.2.0-android') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
-        exclude group: 'org.web3j', module: 'utils'// 替换国密Hash.java文件
+        exclude module: 'utils'// 替换国密Hash.java文件
         exclude module: 'rxjava'
     }
     api 'org.bouncycastle:bcprov-jdk15on:1.60'
