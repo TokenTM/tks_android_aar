@@ -26,19 +26,10 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api fileTree(include: ['tks-debug.jar', 'lib_api-debug.jar'], dir: 'libs')
-    //api fileTree(include: ['sm_crypto.aar'], dir: 'libs')
     api rootProject.ext.dependencies.xxf_android
-    implementation 'org.xxtea:xxtea-java:1.0.5'
-    api('org.web3j:core:4.2.0-android') {
-        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
-        exclude module: 'utils'// 替换国密Hash.java文件
-        exclude module: 'rxjava'
-    }
-    api 'org.bouncycastle:bcprov-jdk15on:1.60'
+    api rootProject.ext.dependencies.tks_android_web3j
+    implementation rootProject.ext.dependencies.xxtea
 }
 repositories {
     mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
 }
