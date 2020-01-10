@@ -15,7 +15,7 @@ ext {
 
     dependencies = [
             xxf_android      : "com.github.NBXXF:xxf_android:2.6.3",
-            tks_android_web3j: "com.github.TokenTM.tks_android_web3j:abi:1.0.2",
+            tks_android_web3j: "com.github.TokenTM:tks_android_web3j:1.0.5",
             xxtea            : "org.xxtea:xxtea-java:1.0.5",
 
     ]
