@@ -3,6 +3,7 @@ package com.tokentm.token_android_aar;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 public class MainActivity extends Activity {
 
     @Override
