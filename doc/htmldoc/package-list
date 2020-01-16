@@ -1,4 +1,5 @@
 com.tokentm.sdk.common
+com.tokentm.sdk.common.encrypt
 com.tokentm.sdk.exceptions
 com.tokentm.sdk.model
 com.tokentm.sdk.source
