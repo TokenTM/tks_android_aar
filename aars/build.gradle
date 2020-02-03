@@ -28,6 +28,8 @@ dependencies {
     api fileTree(include: ['tks-debug.jar', 'lib_api-debug.jar'], dir: 'libs')
     api rootProject.ext.dependencies.xxf_android
     api rootProject.ext.dependencies.tks_android_web3j
+    api rootProject.ext.dependencies.tks_android_web3j_compact
+    api rootProject.ext.dependencies.tks_android_web3j_utils
     implementation rootProject.ext.dependencies.xxtea
 }
 repositories {
